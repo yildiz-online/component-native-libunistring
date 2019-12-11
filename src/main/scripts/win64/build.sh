@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+sed -i 's#/src/target/classes/win64/lib#/src/src/main/scripts/win64/libiconv/win64/lib#g' /src/src/main/scripts/win64/libiconv/win64/lib/libiconv.la
+
+export $ LDFLAGS="-L/src/src/main/scripts/win64/libiconv/win64/lib" CFLAGS="-I/src/src/main/scripts/win64/libiconv/win64/include"
+
 cd ../..
 
 curl https://ftp.gnu.org/gnu/libunistring/libunistring-0.9.10.tar.gz -o libunistring-0.9.10.tar.gz
